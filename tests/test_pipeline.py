@@ -186,4 +186,4 @@ class TestPAIRPipeline:
         pipeline.run_goal("goal one", goal_id=0)
         summary = pipeline.summary_dataframe()
         assert len(summary) == 1
-        assert summary.iloc[0]["succeeded"] is True
+        assert summary.iloc[0]["succeeded"] == True  # noqa: E712  (numpy bool != Python bool)
