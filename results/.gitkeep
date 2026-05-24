@@ -1,0 +1,2 @@
+This file is a placeholder to ensure the results/ directory is tracked by git.
+Result CSVs and charts (.csv, .png, .json) are excluded via .gitignore.

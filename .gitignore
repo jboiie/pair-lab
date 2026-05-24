@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Secrets - NEVER commit these
+.env
+.env.local
+.env.*.local
+secrets.json
+api_keys.txt
+
+# Results (large outputs - use git lfs or exclude)
+results/*.csv
+results/*.json
+results/*.parquet
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Distribution
+dist/
+*.tar.gz
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
