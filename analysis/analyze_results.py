@@ -203,7 +203,7 @@ def generate_markdown_summary(summary: pd.DataFrame, iterations: pd.DataFrame, a
 | Total Goals Tested | {n_total} |
 | Successful Jailbreaks | {n_success} |
 | **Attack Success Rate (ASR)** | **{asr:.1%}** |
-| Avg Iterations to Success | {avg_iters:.1f if not pd.isna(avg_iters) else 'N/A'} |
+| Avg Iterations to Success | {f"{avg_iters:.1f}" if not pd.isna(avg_iters) else "N/A"} |
 | Max Iterations per Goal | {summary['total_iterations'].max()} |
 
 ### Per-Goal Results

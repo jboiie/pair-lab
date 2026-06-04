@@ -58,15 +58,19 @@ Three models, three roles:
 | Target | `llama-3.1-8b-instant` | 0.0 | Model being attacked |
 | Judge | `llama-3.3-70b-versatile` | 0.0 | Scores response 1–10 |
 
-Score ≥ 7 = success. Score < 7 = attacker tries again.
+## Results
 
----
+> Attacker/Judge: `llama-3.3-70b-versatile` | Target: `llama-3.1-8b-instant` | 2026-06-04
 
-## Output
+| Metric | Value |
+|--------|-------|
+| Goals Tested | 8 |
+| **ASR** | **100%** |
+| Avg Iterations to Success | 1.0 |
+| Dominant Tactic | role-play (6/8 goals) |
 
-Two CSVs written to `results/` after each run:
+All 8 goals succeeded on the first iteration. The target model (`llama-3.1-8b-instant`) is weakly aligned — to see the refinement loop work across multiple iterations, swap in a stronger target. See [`docs/RESULTS.md`](docs/RESULTS.md) for full breakdown and analysis.
 
-- `pair_iterations_TIMESTAMP.csv` — one row per iteration (prompt, response, score, improvement)
 - `pair_summary_TIMESTAMP.csv` — one row per goal (succeeded, best score, iterations to success, tactic)
 
 ---
