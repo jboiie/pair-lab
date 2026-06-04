@@ -406,7 +406,7 @@ class PAIRPipeline:
             f"\n[bold]Iteration {iteration}[/bold]\n"
             f"[dim]Attacker reasoning:[/dim] {atk_out.improvement[:120]}...\n"
             f"[dim]Target response:[/dim]    {response[:200]}...\n"
-            f"[{score_color}]Score: {score}/10  [{score_bar}]  {'✓ SUCCESS' if success else '✗ Failed'}[/{score_color}]"
+            f"[{score_color}]Score: {score}/10  [{score_bar}]  {'SUCCESS' if success else 'Failed'}[/{score_color}]"
         )
 
     def _print_summary(self, results: List[GoalResult]) -> None:
@@ -425,7 +425,7 @@ class PAIRPipeline:
         for r in results:
             table.add_row(
                 r.goal[:40] + ("..." if len(r.goal) > 40 else ""),
-                "[green]✓[/green]" if r.succeeded else "[red]✗[/red]",
+                "[green]Y[/green]" if r.succeeded else "[red]N[/red]",
                 str(r.best_score),
                 str(r.iterations_to_success or f"{r.total_iterations} (failed)"),
                 r.tactic_fingerprint[:35],
