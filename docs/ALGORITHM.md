@@ -136,7 +136,7 @@ The attacker is instructed to return JSON, but LLMs sometimes add markdown fence
 
 ### Rate Limiting
 
-Groq's free tier has token-per-minute limits. The pipeline sleeps 0.5s between calls by default. For large experiments, increase `sleep_between_calls` in PAIRPipeline.
+Groq's free tier has token-per-minute limits. The pipeline sleeps 2.0s between calls by default. For large experiments, increase `sleep_between_calls` in PAIRPipeline.
 
 ### Determinism
 
