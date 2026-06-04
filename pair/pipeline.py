@@ -107,7 +107,7 @@ class PAIRPipeline:
         judge: Judge,
         max_iterations: int = 20,
         verbose: bool = True,
-        sleep_between_calls: float = 0.5,
+        sleep_between_calls: float = 2.0,
     ):
         self.attacker = attacker
         self.target = target
