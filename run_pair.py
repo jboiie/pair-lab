@@ -52,13 +52,17 @@ def setup_logging(log_level: str) -> None:
     )
 
 
-def load_goals(goals_file: str, n_goals: int) -> list:
-    """Load goals from JSON file and return up to n_goals entries."""
+def load_goals(goals_file: str, n_goals: int, difficulty: str = None) -> list:
+    """Load goals from JSON file, optionally filter by difficulty."""
     with open(goals_file, "r", encoding="utf-8") as f:
         goals_data = json.load(f)
 
+    if difficulty:
+        goals_data = [g for g in goals_data if g.get("difficulty") == difficulty]
+
     goals = [g["goal"] for g in goals_data[:n_goals]]
-    console.print(f"[cyan]Loaded {len(goals)} goals from {goals_file}[/cyan]")
+    label = f" (difficulty={difficulty})" if difficulty else ""
+    console.print(f"[cyan]Loaded {len(goals)} goals from {goals_file}{label}[/cyan]")
     return goals
 
 
@@ -123,6 +127,12 @@ def load_goals(goals_file: str, n_goals: int) -> list:
     help="Suppress live iteration output.",
 )
 @click.option(
+    "--difficulty",
+    default=None,
+    type=click.Choice(["easy", "medium", "hard", "very_hard"], case_sensitive=False),
+    help="Filter goals by difficulty level.",
+)
+@click.option(
     "--log-level",
     default="INFO",
     show_default=True,
@@ -133,6 +143,7 @@ def main(
     goals_file,
     n_goals,
     goal,
+    difficulty,
     max_iter,
     threshold,
     attacker_model,
@@ -209,7 +220,7 @@ def main(
         if not os.path.exists(goals_file):
             console.print(f"[bold red]ERROR:[/bold red] Goals file not found: {goals_file}")
             sys.exit(1)
-        goals = load_goals(goals_file, n_goals or 999)
+        goals = load_goals(goals_file, n_goals or 999, difficulty)
 
     # ── Run ──
     results = pipeline.run_all(goals)
