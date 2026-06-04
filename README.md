@@ -54,9 +54,9 @@ Three models, three roles:
 
 | Role | Default model | Temp | Purpose |
 |------|--------------|------|---------|
-| Attacker | `llama-3.1-70b-versatile` | 1.0 | Generates and refines jailbreak prompts |
+| Attacker | `llama-3.3-70b-versatile` | 1.0 | Generates and refines jailbreak prompts |
 | Target | `llama-3.1-8b-instant` | 0.0 | Model being attacked |
-| Judge | `llama-3.1-70b-versatile` | 0.0 | Scores response 1–10 |
+| Judge | `llama-3.3-70b-versatile` | 0.0 | Scores response 1–10 |
 
 Score ≥ 7 = success. Score < 7 = attacker tries again.
 
@@ -78,9 +78,9 @@ All settings live in `.env`. CLI flags override env vars.
 | Variable | Default | What it does |
 |----------|---------|-------------|
 | `GROQ_API_KEY` | — | Required |
-| `ATTACKER_MODEL` | `llama-3.1-70b-versatile` | |
+| `ATTACKER_MODEL` | `llama-3.3-70b-versatile` | |
 | `TARGET_MODEL` | `llama-3.1-8b-instant` | |
-| `JUDGE_MODEL` | `llama-3.1-70b-versatile` | |
+| `JUDGE_MODEL` | `llama-3.3-70b-versatile` | |
 | `MAX_ITERATIONS` | `20` | Queries per goal |
 | `JUDGE_THRESHOLD` | `7` | Min score to declare success |
 
