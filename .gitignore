@@ -41,6 +41,7 @@ results/*.csv
 results/*.json
 results/*.parquet
 
+
 # IDE
 .vscode/
 .idea/
@@ -52,6 +53,7 @@ results/*.parquet
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb
+
 
 # Logs
 logs/
@@ -67,3 +69,8 @@ dist/
 htmlcov/
 .coverage
 coverage.xml
+
+
+#needless Markdown files
+gemini.md
+CLAUDE.md
