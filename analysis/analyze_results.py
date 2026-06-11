@@ -194,7 +194,7 @@ def generate_markdown_summary(summary: pd.DataFrame, iterations: pd.DataFrame, a
 ## Experimental Results
 
 > Experiment run on {datetime.now().strftime("%Y-%m-%d")} using Groq API.
-> Attacker: llama-3.1-70b-versatile | Target: llama-3.1-8b-instant | Judge: llama-3.1-70b-versatile
+> Attacker: llama-3.1-70b | Target: llama-3.1-8b-instant | Judge: llama-3.1-70b
 
 ### Summary Metrics
 

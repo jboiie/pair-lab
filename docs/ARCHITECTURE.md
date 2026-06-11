@@ -87,9 +87,9 @@ pair-lab/
 
 | Role | Recommended Model | Why |
 |------|------------------|-----|
-| Attacker | `llama-3.1-70b-versatile` | Needs strong reasoning + creativity |
+| Attacker | `llama-3.1-70b` | Needs strong reasoning + creativity |
 | Target | `llama-3.1-8b-instant` | Simulates a deployed, smaller model |
-| Judge | `llama-3.1-70b-versatile` | Needs careful instruction following |
+| Judge | `llama-3.1-70b` | Needs careful instruction following |
 
 You can vary the target to measure ASR across different models:
 - Larger target → expect lower ASR

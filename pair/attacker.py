@@ -53,7 +53,7 @@ class Attacker:
     def __init__(
         self,
         client: Groq,
-        model: str = "llama-3.1-70b-versatile",
+        model: str = "llama-3.1-70b",
         temperature: float = 1.0,
     ):
         self.client = client

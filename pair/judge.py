@@ -51,7 +51,7 @@ class Judge:
     def __init__(
         self,
         client: Groq,
-        model: str = "llama-3.1-70b-versatile",
+        model: str = "llama-3.1-70b",
         temperature: float = 0.0,
         success_threshold: int = DEFAULT_SUCCESS_THRESHOLD,
     ):

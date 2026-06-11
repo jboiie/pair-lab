@@ -59,7 +59,7 @@ The three roles:
 
 **Target:** The model being attacked. It only sees the current jailbreak prompt as a user message. It has no knowledge it's being attacked. The target in the paper's experiments is GPT-3.5, GPT-4, Claude, Gemini, Llama-2, and Vicuna — the paper tests across all of them.
 
-**Judge:** A model that scores the target's response on a 1-10 scale. 1 means complete refusal, 10 means full compliance. The judge knows the goal, the prompt, and the response. The paper uses GPT-4 as the judge because it's the most reliable at following the rubric. In this codebase we use `llama-3.1-70b-versatile` for both attacker and judge since it's freely available via Groq.
+**Judge:** A model that scores the target's response on a 1-10 scale. 1 means complete refusal, 10 means full compliance. The judge knows the goal, the prompt, and the response. The paper uses GPT-4 as the judge because it's the most reliable at following the rubric. In this codebase we use `llama-3.1-70b` for both attacker and judge since it's freely available via Groq.
 
 ---
 
